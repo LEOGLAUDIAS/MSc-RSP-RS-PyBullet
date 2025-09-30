@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot name="pillar">
+
+  <link name="world"/>
+
+  <link name="pillar_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="1"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.2" length="1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="50"/>
+      <inertia ixx="5" ixy="0" ixz="0" iyy="5" iyz="0" izz="5"/>
+    </inertial>
+  </link>
+
+  <joint name="pillar_fixed_joint" type="fixed">
+    <parent link="world"/>
+    <child link="pillar_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
